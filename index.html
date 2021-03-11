@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+      <meta charset="UTF-8">
+      <title>Covid19</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <!--Load the AJAX API-->
+      <script src="https://www.gstatic.com/charts/loader.js"></script>
+      <script>
+
+        // Load the Visualization API and the corechart package.
+        google.charts.load('current', {'packages':['corechart']});
+
+        // Set a callback to run when the Google Visualization API is loaded.
+        google.charts.setOnLoadCallback(drawChart);
+
+        // Callback that creates and populates a data table,
+        // instantiates the pie chart, passes in the data and
+        // draws it.
+        function drawChart() {
+
+            // Create the data table.
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Día');
+            data.addColumn('number', 'Positivos');
+            data.addColumn('number', 'Fallecidos');
+            
+            data.addRows([
+            ['01', 54, 3],
+            ['02', 73, 1],
+            ['03', 93, 2],
+            ['04', 79, 2],
+            ['05', 52, 1],
+            ['06', 64, 3],
+            ['07', 35, 1],
+            ['08', 20, 1],
+            ['09', 45, 1],
+            ['10', 73, 1],
+            ['11', 98, 1],
+            ['12', 0, 0],
+            ['13', 0, 0],
+            ['14', 0, 0],
+            ['15', 0, 0],
+            ['16', 0, 0],
+            ['17', 0, 0],
+            ['18', 0, 0],
+            ['19', 0, 0],
+            ['20', 0, 0],
+            ['21', 0, 0],
+            ['22', 0, 0],
+            ['23', 0, 0],
+            ['24', 0, 0],
+            ['25', 0, 0],
+            ['26', 0, 0],
+            ['27', 0, 0],
+            ['28', 0, 0],
+            ['29', 0, 0],
+            ['30', 0, 0],
+            ['31', 0, 0]
+            ]);
+
+            // Set chart options
+            var options = {'title':'Casos de COVID19 en Corrientes Capital',
+                        'width':1200,
+                        'height':500};
+
+            // Instantiate and draw our chart, passing in some options.
+            var chart = new google.visualization.LineChart(document.getElementById('covid19'));
+            chart.draw(data, options);
+        }
+
+    </script>
+</head>
+<body>
+
+    <!--Div that will hold the pie chart-->
+    <div id="covid19"></div>
+
+</body>
+</html>
